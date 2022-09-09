@@ -9,6 +9,14 @@
    License: GPL2
    */
 if ( ! is_admin() ) {
+   /*
+   Add csss
+   */
+   function sm_add_css() {
+      echo '<style type="text/css">
+.sm-tb-con{background-color:#f1f1f1;border-radius:4px;border:solid 1px #ccc}.sm-tb-con li{list-style:none}';
+   }
+   add_filter('wp_head', 'sm_add_css');
    add_filter( 'the_content', 'update_post_conent', 1 );
 
    function update_post_conent( $content ) {
